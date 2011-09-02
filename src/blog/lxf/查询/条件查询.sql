@@ -1,6 +1,3 @@
-SELECT *
-  FROM students;
-
 -- AND
 SELECT *
   FROM students
