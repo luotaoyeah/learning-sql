@@ -10,24 +10,26 @@ DROP TABLE IF EXISTS students;
 
 -- 创建classes表：
 CREATE TABLE classes
-(
-    id   BIGINT       NOT NULL AUTO_INCREMENT,
-    name VARCHAR(100) NOT NULL,
-    PRIMARY KEY (id)
-) ENGINE = InnoDB
-  DEFAULT CHARSET = utf8;
+    (
+        id   BIGINT       NOT NULL AUTO_INCREMENT,
+        name VARCHAR(100) NOT NULL,
+        PRIMARY KEY (id)
+    )
+ENGINE = InnoDB
+DEFAULT CHARSET = utf8;
 
 -- 创建students表：
 CREATE TABLE students
-(
-    id       BIGINT       NOT NULL AUTO_INCREMENT,
-    class_id BIGINT       NOT NULL,
-    name     VARCHAR(100) NOT NULL,
-    gender   VARCHAR(1)   NOT NULL,
-    score    INT          NOT NULL,
-    PRIMARY KEY (id)
-) ENGINE = InnoDB
-  DEFAULT CHARSET = utf8;
+    (
+        id       BIGINT       NOT NULL AUTO_INCREMENT,
+        class_id BIGINT       NOT NULL,
+        name     VARCHAR(100) NOT NULL,
+        gender   VARCHAR(1)   NOT NULL,
+        score    INT          NOT NULL,
+        PRIMARY KEY (id)
+    )
+ENGINE = InnoDB
+DEFAULT CHARSET = utf8;
 
 -- 插入classes记录：
 INSERT INTO classes(id, name)

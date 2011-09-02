@@ -1,10 +1,10 @@
-# 查询所有学生
+-- 查询所有学生
 SELECT *
-FROM students;
+  FROM students;
 
-# 查询所有班级
+-- 查询所有班级
 SELECT *
-FROM classes;
+  FROM classes;
 
-# 省略 FROM 子句
+-- 省略 FROM 子句
 SELECT 1 + 2;
