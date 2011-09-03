@@ -1,3 +1,5 @@
+-- 初始数据
+
 CREATE DATABASE IF NOT EXISTS test;
 
 USE test;
@@ -6,6 +8,8 @@ DROP TABLE IF EXISTS classes;
 DROP TABLE IF EXISTS students;
 DROP TABLE IF EXISTS en;
 DROP TABLE IF EXISTS cn;
+-- 账户
+DROP TABLE IF EXISTS accounts;
 
 -- 创建classes表：
 CREATE TABLE classes
@@ -44,6 +48,15 @@ CREATE TABLE cn
     (
         id   BIGINT       NOT NULL AUTO_INCREMENT,
         name VARCHAR(100) NOT NULL,
+        PRIMARY KEY (id)
+    )
+ENGINE = InnoDB
+DEFAULT CHARSET = utf8;
+
+CREATE TABLE accounts
+    (
+        id    BIGINT NOT NULL AUTO_INCREMENT,
+        value INT    NOT NULL DEFAULT 0,
         PRIMARY KEY (id)
     )
 ENGINE = InnoDB
@@ -94,3 +107,8 @@ INSERT INTO cn(id, name)
 VALUES (3, '丙');
 INSERT INTO cn(id, name)
 VALUES (4, '丁');
+
+INSERT INTO accounts(value)
+VALUES (100);
+INSERT INTO accounts(value)
+VALUES (100);
