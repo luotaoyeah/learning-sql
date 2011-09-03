@@ -4,6 +4,7 @@
   <SqlCodeStyleSettings version="6">
     <option name="KEYWORD_CASE" value="2" />
     <option name="IDENTIFIER_CASE" value="1" />
+    <option name="TYPE_CASE" value="2" />
     <option name="QUERY_SECTION_1ST_WORD_ALIGN" value="8" />
     <option name="QUERY_EL_COMMA" value="2" />
     <option name="SUBQUERY_OPENING" value="1" />
