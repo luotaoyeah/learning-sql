@@ -4,9 +4,10 @@ CREATE DATABASE IF NOT EXISTS test;
 -- 切换到test数据库
 USE test;
 
--- 删除classes表和students表（如果存在）：
 DROP TABLE IF EXISTS classes;
 DROP TABLE IF EXISTS students;
+DROP TABLE IF EXISTS en;
+DROP TABLE IF EXISTS cn;
 
 -- 创建classes表：
 CREATE TABLE classes
@@ -26,6 +27,25 @@ CREATE TABLE students
         name     VARCHAR(100) NOT NULL,
         gender   VARCHAR(1)   NOT NULL,
         score    INT          NOT NULL,
+        PRIMARY KEY (id)
+    )
+ENGINE = InnoDB
+DEFAULT CHARSET = utf8;
+
+CREATE TABLE en
+    (
+        id    BIGINT       NOT NULL AUTO_INCREMENT,
+        name  VARCHAR(100) NOT NULL,
+        cn_id BIGINT       NOT NULL,
+        PRIMARY KEY (id)
+    )
+ENGINE = InnoDB
+DEFAULT CHARSET = utf8;
+
+CREATE TABLE cn
+    (
+        id   BIGINT       NOT NULL AUTO_INCREMENT,
+        name VARCHAR(100) NOT NULL,
         PRIMARY KEY (id)
     )
 ENGINE = InnoDB
@@ -62,3 +82,17 @@ INSERT INTO students (id, class_id, name, gender, score)
 VALUES (9, 3, '小王', 'M', 89);
 INSERT INTO students (id, class_id, name, gender, score)
 VALUES (10, 3, '小丽', 'F', 85);
+
+INSERT INTO en(id, name, cn_id)
+VALUES (1, 'A', 1);
+INSERT INTO en(id, name, cn_id)
+VALUES (2, 'B', 2);
+INSERT INTO en(id, name, cn_id)
+VALUES (3, 'C', 3);
+
+INSERT INTO cn(id, name)
+VALUES (2, '乙');
+INSERT INTO cn(id, name)
+VALUES (3, '丙');
+INSERT INTO cn(id, name)
+VALUES (4, '丁');
