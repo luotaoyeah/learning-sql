@@ -1,4 +1,7 @@
 INSERT INTO en(name, cn_id)
+VALUES ('A', 1);
+
+INSERT INTO en(name, cn_id)
 VALUES ('D', 4);
 
 -- 一次插入多行
