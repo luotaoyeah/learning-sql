@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MarkdownSettings">
+    <option name="customStylesheetText" value="&#10;p,&#10;div,&#10;h1,&#10;h2,&#10;h3,&#10;h4,&#10;h5,&#10;h6,&#10;span,&#10;ul,&#10;li,&#10;a {&#10;    font-family: '宋体', sans-serif !important;&#10;}&#10;&#10;code,&#10;pre {&#10;    font-family: Monaco, sans-serif !important;&#10;    font-size: 90%;&#10;}&#10;&#10;code {&#10;    border-radius: 3px !important;&#10;}" />
+    <option name="useCustomStylesheetText" value="true" />
+  </component>
+</project>
