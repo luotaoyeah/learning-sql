@@ -2,8 +2,6 @@
 
 ---
 
-TODO 第 43 页
-
 ![](cover.png)
 
 ## Chapter 2. Creating and Populating a Database

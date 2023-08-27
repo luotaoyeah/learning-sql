@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="init-sakila" type="DatabaseScript">
+    <script-file value="$PROJECT_DIR$/sakila-db/sakila-schema.sql" />
+    <script-file value="$PROJECT_DIR$/sakila-db/sakila-data.sql" />
+    <script-mode>FILE</script-mode>
+    <data-source id="2a11dfea-e2a9-4c75-8b15-51a4d1cfa3f4" />
+    <method v="2" />
+  </configuration>
+</component>
