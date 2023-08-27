@@ -1,4 +1,4 @@
-/* 3.3.2. removing duplicates */
+-- 3.3.2. removing duplicates
 
 USE sakila;
 
