@@ -2,8 +2,8 @@
 
 USE sakila;
 
--- DISTINCT 是对结果集中的所有列的组合进行去重, 不是只对某些列去重
--- DISTINCT 需要对结果集进行排序, 然后去重, 因此会花费额外的时间
+-- DISTINCT 是对结果集中的所有列的组合进行去重, 不是只对某些列去重,
+-- DISTINCT 需要对结果集进行排序, 然后去重, 因此会花费额外的时间,
 
 SELECT actor_id
   FROM film_actor
