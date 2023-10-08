@@ -10,8 +10,5 @@ SELECT IF(EXISTS(
 
 SELECT IF(EXISTS(
                     SELECT 1
-                      FROM (
-                               SELECT 1
-                           ) AS a
                      WHERE FALSE
                 ) = TRUE, '是', '否') AS 结果;
