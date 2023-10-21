@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2022-CU9-ubuntu-20.04
+    environment:
+      - SA_PASSWORD=Pass@w0rd
+      - ACCEPT_EULA=Y
+    ports:
+      - '12433:1433'
+    volumes:
+      - C:/tmp:/tmp
