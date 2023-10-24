@@ -19,8 +19,8 @@ SELECT TOP (5) WITH TIES orderid, orderdate
   FROM sales.orders
  ORDER BY orderdate DESC;
 
--- OFFSET...FETCH... 用于分页查询
--- 其中的 ROWS 和 ROW 可以互换, NEXT 和 FIRST 可以互换,
+-- OFFSET...FETCH... 用于分页查询, 位于 ORDER BY 后面,
+-- 其中 ROWS 和 ROW 可以互换, NEXT 和 FIRST 可以互换,
 
 SELECT orderid, orderdate
   FROM sales.orders
