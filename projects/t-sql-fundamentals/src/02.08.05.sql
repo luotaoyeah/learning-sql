@@ -55,3 +55,12 @@ SELECT DATEPART(YEAR, SYSDATETIME()) AS year, DATEPART(MONTH, SYSDATETIME()) AS 
  UNION ALL
 SELECT YEAR(SYSDATETIME()) AS year, MONTH(SYSDATETIME()) AS month, DAY(SYSDATETIME()) AS day;
 -- endregion
+
+-- region ISDATE()
+-- ----------------------------------------------------------------------------------------------------
+-- 判断字符串是否可以转换为 DATE/TIME/DATETIME 类型, 是返回 1, 否返回 0,
+SELECT ISDATE('20240233');
+
+-- 如下, 只能转换为 DATETIME2, 不能转换为 DATETIME, 因此返回 0,
+SELECT ISDATE('2024-01-01 00:00:00.0000000');
+-- endregion
