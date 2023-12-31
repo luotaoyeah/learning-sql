@@ -21,8 +21,9 @@ SELECT *
   FROM STRING_SPLIT('a,b,c', ',');
 
 
--- STRING_AGG(), 将分组中的每一行的某一列的值(也可以是表达式), 使用 separator 拼接成一个字符串,
-
+-- region STRING_AGG(),
+-- 将分组中的每一行的某一列的值(也可以是表达式), 使用 separator 拼接成一个字符串,
+-- ----------------------------------------------------------------------------------------------------
 SELECT STRING_AGG(id, ','), sex
   FROM (
            SELECT 1 AS id, N'男' AS sex UNION ALL SELECT 2 AS id, N'男' AS sex UNION ALL SELECT 3 AS id, N'男' AS sex UNION ALL SELECT 4 AS id, N'女' AS sex UNION ALL SELECT 5 AS id, N'女' AS sex
@@ -34,3 +35,4 @@ SELECT STRING_AGG(id, ',') WITHIN GROUP (ORDER BY id), sex
            SELECT 1 AS id, N'男' AS sex UNION ALL SELECT 2 AS id, N'男' AS sex UNION ALL SELECT 3 AS id, N'男' AS sex UNION ALL SELECT 4 AS id, N'女' AS sex UNION ALL SELECT 5 AS id, N'女' AS sex
        ) AS temp_t
  GROUP BY sex;
+-- endregion

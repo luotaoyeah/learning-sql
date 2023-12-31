@@ -1,5 +1,6 @@
 -- 2.7.4 the LIKE predicate
 
+
 -- region 通配符 % 表示任意字符串, 包括空字符串
 -- ----------------------------------------------------------------------------------------------------
 -- endregion
@@ -38,4 +39,17 @@ SELECT *
 SELECT *
   FROM STRING_SPLIT('A_,B_,C_,D_,E_', ',')
  WHERE value LIKE '[^B-D]%';
+-- endregion
+
+
+-- region 如果数据本身包含这些特殊字符(%_[]), 则可以如下进行转义,
+-- 在特殊字符前面加上某个字符(比如下面的 ! 和 #, 需要确保这个字符不会出现在数据本身中), 然后在最后使用 ESCAPE '!' 或者 ESCAPE '#' 表示对 ! 和 # 后面的字符进行转义,
+-- ----------------------------------------------------------------------------------------------------
+SELECT *
+  FROM STRING_SPLIT('A_C,ABC', ',')
+ WHERE value LIKE 'A!_C' ESCAPE '!';
+
+SELECT *
+  FROM STRING_SPLIT('A_C,ABC', ',')
+ WHERE value LIKE 'A#_C' ESCAPE '#';
 -- endregion
