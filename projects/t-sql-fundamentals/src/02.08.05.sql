@@ -32,9 +32,19 @@ SELECT CONVERT(VARCHAR(10), CURRENT_TIMESTAMP, 120);
 
 -- region DATEADD()
 -- ----------------------------------------------------------------------------------------------------
--- DATEADD(part, n, value),
+-- DATEADD(part, n, value), 给某个日期加上指定时间,
 -- 其中参数 part 可以为 year/month/day/hour/minute/second 等等,
 -- 如果 value 类型为字符串, 则结果类型为 DATETIME, 否则结果类型跟 value 类型一样,
 -- 参数 n 可以为负数,
 SELECT DATEADD(YEAR, 1, '20240101');
+-- endregion
+
+
+-- region DATEDIFF()
+-- ----------------------------------------------------------------------------------------------------
+-- DATEDIFF(part, value1, value2) 计算两个日期间的差值, 结果类型为 INT,
+-- 获取本月的第一天
+SELECT DATEADD(MONTH, DATEDIFF(MONTH, '19000101', SYSDATETIME()), '19000101');
+-- 获取本年的第一月
+SELECT DATEADD(YEAR, DATEDIFF(YEAR, '19000101', SYSDATETIME()), '19000101');
 -- endregion
