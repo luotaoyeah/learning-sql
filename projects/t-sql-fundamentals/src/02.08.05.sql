@@ -48,3 +48,10 @@ SELECT DATEADD(MONTH, DATEDIFF(MONTH, '19000101', SYSDATETIME()), '19000101');
 -- 获取本年的第一月
 SELECT DATEADD(YEAR, DATEDIFF(YEAR, '19000101', SYSDATETIME()), '19000101');
 -- endregion
+
+-- region DATEPART(), YEAR(), MONTH(), DAY()
+-- ----------------------------------------------------------------------------------------------------
+SELECT DATEPART(YEAR, SYSDATETIME()) AS year, DATEPART(MONTH, SYSDATETIME()) AS month, DATEPART(DAY, SYSDATETIME()) AS day
+ UNION ALL
+SELECT YEAR(SYSDATETIME()) AS year, MONTH(SYSDATETIME()) AS month, DAY(SYSDATETIME()) AS day;
+-- endregion
