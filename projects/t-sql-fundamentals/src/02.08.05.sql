@@ -11,3 +11,16 @@ SELECT CURRENT_TIMESTAMP AS [CURRENT_TIMESTAMP];
 -- ----------------------------------------------------------------------------------------------------
 SELECT SYSDATETIME() AS [SYSDATETIME()];
 -- endregion
+
+
+-- region (标准) CAST(value AS type)
+-- ----------------------------------------------------------------------------------------------------
+SELECT CAST(SYSDATETIME() AS VARCHAR(10));
+-- endregion
+
+
+-- region CONVERT(type, value[, style])
+-- 第三个参数 style 表示日期格式, https://learn.microsoft.com/en-us/sql/t-sql/functions/cast-and-convert-transact-sql?view=sql-server-ver16#date-and-time-styles
+-- ----------------------------------------------------------------------------------------------------
+SELECT CONVERT(VARCHAR(10), CURRENT_TIMESTAMP, 120);
+-- endregion
