@@ -19,7 +19,8 @@ SELECT lastname
 
 -- 标准 SQL 中, 单引号用来包裹字符串字面量, 双引号用来包裹标识符(数据库名/表名/字段名...), 在 T-SQL 中还可以用 [] 来包裹标识符,
 
-SELECT firstname + ' ' + lastname AS "姓 名", lastname + ' ' + firstname AS [名 姓]
+SELECT firstname + ' ' + lastname AS "姓 名",
+       lastname + ' ' + firstname AS [名 姓]
   FROM hr.employees
 
 

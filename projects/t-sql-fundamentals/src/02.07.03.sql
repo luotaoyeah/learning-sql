@@ -21,18 +21,40 @@ SELECT *
   FROM STRING_SPLIT('a,b,c', ',');
 
 
--- region STRING_AGG(),
--- 将分组中的每一行的某一列的值(也可以是表达式), 使用 separator 拼接成一个字符串,
+-- region STRING_AGG()
 -- ----------------------------------------------------------------------------------------------------
-SELECT STRING_AGG(id, ','), sex
+-- 将分组中的每一行的某一列的值(也可以是表达式), 使用 separator 拼接成一个字符串,
+SELECT STRING_AGG(id, ','),
+       sex
   FROM (
            SELECT 1 AS id, N'男' AS sex UNION ALL SELECT 2 AS id, N'男' AS sex UNION ALL SELECT 3 AS id, N'男' AS sex UNION ALL SELECT 4 AS id, N'女' AS sex UNION ALL SELECT 5 AS id, N'女' AS sex
        ) AS temp_t
  GROUP BY sex;
 
-SELECT STRING_AGG(id, ',') WITHIN GROUP (ORDER BY id), sex
+SELECT STRING_AGG(id, ',') WITHIN GROUP (ORDER BY id),
+       sex
   FROM (
            SELECT 1 AS id, N'男' AS sex UNION ALL SELECT 2 AS id, N'男' AS sex UNION ALL SELECT 3 AS id, N'男' AS sex UNION ALL SELECT 4 AS id, N'女' AS sex UNION ALL SELECT 5 AS id, N'女' AS sex
        ) AS temp_t
  GROUP BY sex;
+-- endregion
+
+-- region STRING_AGG() 去重
+-- ----------------------------------------------------------------------------------------------------
+-- 使用 STRING_AGG() 之前先对数据去重, 由于 STRING_AGG() 不能直接使用 DISTINCT, 因此解决方法是:
+--   1. 使用 STRING_AGG() 聚合
+--   2. 使用 STRING_SPLIT() 拆分
+--   3. 使用 DISTINCT 去重
+--   4. 使用 STRING_AGG() 聚合
+SELECT STRING_AGG(value, ',') WITHIN GROUP ( ORDER BY value) AS 直接聚合,
+       (
+           SELECT STRING_AGG(value, ',') WITHIN GROUP ( ORDER BY value)
+             FROM (
+                      SELECT DISTINCT value
+                        FROM STRING_SPLIT(STRING_AGG(value, ','), ',')
+                  ) AS inneragg
+       )                                                     AS 先去重再聚合
+  FROM (
+           SELECT 1 AS id, 1 AS value UNION ALL SELECT 1 AS id, 2 AS value UNION ALL SELECT 1 AS id, 2 AS value UNION ALL SELECT 1 AS id, 3 AS value UNION ALL SELECT 1 AS id, 4 AS value
+       ) AS tmp;
 -- endregion

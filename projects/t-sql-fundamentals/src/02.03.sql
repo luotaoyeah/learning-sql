@@ -10,7 +10,7 @@ SELECT supplierid,
             WHEN 0 THEN 'EVEN'
             WHEN 1 THEN 'ODD'
             ELSE 'UNKNOWN'
-        END) AS parity
+        END)    AS parity
   FROM production.products
  GROUP BY supplierid;
 

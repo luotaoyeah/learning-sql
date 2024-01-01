@@ -51,9 +51,13 @@ SELECT DATEADD(YEAR, DATEDIFF(YEAR, '19000101', SYSDATETIME()), '19000101');
 
 -- region DATEPART(), YEAR(), MONTH(), DAY()
 -- ----------------------------------------------------------------------------------------------------
-SELECT DATEPART(YEAR, SYSDATETIME()) AS year, DATEPART(MONTH, SYSDATETIME()) AS month, DATEPART(DAY, SYSDATETIME()) AS day
+SELECT DATEPART(YEAR, SYSDATETIME())  AS year,
+       DATEPART(MONTH, SYSDATETIME()) AS month,
+       DATEPART(DAY, SYSDATETIME())   AS day
  UNION ALL
-SELECT YEAR(SYSDATETIME()) AS year, MONTH(SYSDATETIME()) AS month, DAY(SYSDATETIME()) AS day;
+SELECT YEAR(SYSDATETIME())  AS year,
+       MONTH(SYSDATETIME()) AS month,
+       DAY(SYSDATETIME())   AS day;
 -- endregion
 
 -- region ISDATE()
@@ -64,3 +68,8 @@ SELECT ISDATE('20240233');
 -- 如下, 只能转换为 DATETIME2, 不能转换为 DATETIME, 因此返回 0,
 SELECT ISDATE('2024-01-01 00:00:00.0000000');
 -- endregion
+
+
+SELECT *
+  FROM sys.columns
+ WHERE name = 'pcreserved'
