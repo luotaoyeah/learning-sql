@@ -1,24 +1,36 @@
 -- 2.7.3 operators and functions
 
+-- region +
+-- ----------------------------------------------------------------------------------------------------
 -- 使用 + 拼接字符串时, 只要其中一个为 NULL, 则拼接的结果也为 NULL,
 
 SELECT '1' + NULL + '2' AS result;
+-- endregion
 
 
+-- region CONCAT()
+-- ----------------------------------------------------------------------------------------------------
 -- 使用 CONCAT() 拼接字符串时, 会自动将 NULL 转换为空字符串,
 
 SELECT CONCAT('1', NULL, '2') AS result;
+-- endregion
 
 
+-- region CONCAT_WS()
+-- ----------------------------------------------------------------------------------------------------
 -- 使用 CONCAT_WS() 拼接字符串, 第一个参数表示 separator,
 
 SELECT CONCAT_WS(',', 1, 2, 3) AS result;
+-- endregion
 
 
+-- region STRING_SPLIT()
+-- ----------------------------------------------------------------------------------------------------
 -- STRING_SPLIT(), 将一个字符串根据 separator 分割成多个字符串, 返回结果是一个表, 该表只有一个列 value, 该表的每一行就是分割后的每一个字符串,
 
 SELECT *
   FROM STRING_SPLIT('a,b,c', ',');
+-- endregion
 
 
 -- region STRING_AGG()
@@ -30,7 +42,11 @@ SELECT STRING_AGG(id, ','),
            SELECT 1 AS id, N'男' AS sex UNION ALL SELECT 2 AS id, N'男' AS sex UNION ALL SELECT 3 AS id, N'男' AS sex UNION ALL SELECT 4 AS id, N'女' AS sex UNION ALL SELECT 5 AS id, N'女' AS sex
        ) AS temp_t
  GROUP BY sex;
+-- endregion
 
+-- region STRING_AGG(...) WITHIN GROUP (ORDER BY ...)
+-- ----------------------------------------------------------------------------------------------------
+-- 先排序再聚合,
 SELECT STRING_AGG(id, ',') WITHIN GROUP (ORDER BY id),
        sex
   FROM (
