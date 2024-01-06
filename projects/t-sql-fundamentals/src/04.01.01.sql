@@ -18,6 +18,7 @@ SELECT orderid,
  WHERE orderid = @maxid;
 
 -- 如下, 使用子查询实现相同的效果,
+-- 由于不依赖于外查询, 因此下面的子查询总共只会执行一遍,
 SELECT orderid,
        empid,
        custid
