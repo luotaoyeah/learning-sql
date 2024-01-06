@@ -18,7 +18,7 @@ SELECT IIF(1 IN (1, NULL), 'TRUE', 'FALSE');
 --     UNKNOWN
 SELECT IIF(1 IN (2, NULL), 'TRUE', 'FALSE');
 
--- NOT IN 后面如果包含 NULL, 则 NOT IN 表达式的结果始终为 UNKNOWN,
+-- NOT IN 后面如果包含 NULL, 则结果始终为 UNKNOWN,
 
 -- 'FALSE'
 -- 分析步骤如下:
