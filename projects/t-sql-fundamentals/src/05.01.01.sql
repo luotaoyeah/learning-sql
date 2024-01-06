@@ -1,6 +1,6 @@
 -- 5.1.1. assigning column aliases
 
--- region
+-- region derived table
 -- ----------------------------------------------------------------------------------------------------
 -- derived table 指的是 FROM 子句中的子查询,
 -- derived table 的列的别名有两种定义方式, 各有优劣,
