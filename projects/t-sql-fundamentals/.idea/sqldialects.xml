@@ -5,6 +5,7 @@
     <file url="file://$PROJECT_DIR$/src/02.07.04.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/src/12.01.sql" dialect="TSQL" />
     <file url="file://$PROJECT_DIR$/src/12.02.01.sql" dialect="TSQL" />
+    <file url="file://$PROJECT_DIR$/src/12.02.02.sql" dialect="TSQL" />
     <file url="PROJECT" dialect="TSQL" />
   </component>
 </project>
