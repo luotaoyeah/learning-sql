@@ -1,6 +1,6 @@
 -- 12.1 variables
 
--- 使用 DECLARE 声明一个变量, 使用 SET 设置变量的值,
+-- 使用 DECLARE 声明一个变量, 使用 SET 设置变量的值, 变量名必须以 @ 开头,
 DECLARE @i INT;
 SET @i = 10;
 
