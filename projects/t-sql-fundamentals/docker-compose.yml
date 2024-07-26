@@ -7,6 +7,6 @@ services:
       - SA_PASSWORD=Pass@w0rd
       - ACCEPT_EULA=Y
     ports:
-      - '12433:1433'
+      - '51433:1433'
     volumes:
       - C:/tmp:/tmp
